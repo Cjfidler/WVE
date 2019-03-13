@@ -57,7 +57,7 @@ public class PlayerController3D : MonoBehaviour
         //Move the player in different directions based on camera look direction.
         if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            transform.rotation = Quaternion.Euler(0f, -pivot.rotation.eulerAngles.y, 0f);
+            transform.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0f, moveDirection.z));
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
         }

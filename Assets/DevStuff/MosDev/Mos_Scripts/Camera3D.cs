@@ -56,12 +56,12 @@ public class Camera3D : MonoBehaviour
         //LIMIT UP/DOWN CAMERA ROTATION
         if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180f)
         {
-            pivot.rotation = Quaternion.Euler(maxViewAngle, 0, 0);
+            pivot.rotation = Quaternion.Euler(maxViewAngle, pivot.rotation.eulerAngles.y, 0);
         }
 
         if (pivot.rotation.eulerAngles.x > 180 && pivot.rotation.eulerAngles.x < 360f + minViewAngle)
         {
-            pivot.rotation = Quaternion.Euler(360f + minViewAngle, 0, 0);
+            pivot.rotation = Quaternion.Euler(360f + minViewAngle, pivot.rotation.eulerAngles.y, 0);
         }
 
         //MOVE THE CAMERA BASED ON THE CURRENT ROTATION OF THE TARGET & THE ORIGINAL OFFSET
