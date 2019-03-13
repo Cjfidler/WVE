@@ -67,7 +67,7 @@ public class Camera3D : MonoBehaviour
         //MOVE THE CAMERA BASED ON THE CURRENT ROTATION OF THE TARGET & THE ORIGINAL OFFSET
         float desiredYAngle = pivot.eulerAngles.y;
         float desiredXAngle = pivot.eulerAngles.x;
-        Quaternion rotation = Quaternion.Euler(desiredXAngle, desiredXAngle, 0);
+        Quaternion rotation = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
         transform.position = target.position - (rotation * offset);
 
         if(transform.position.y < target.position.y)
