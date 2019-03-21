@@ -9,27 +9,28 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject _spellBag;
+    [SerializeField] private Transform _spellBag;
     private GameObject[] _spells;
 
+    void UpdateSpells()
+    {
+        int i = 0;
+        foreach (Transform child in _spellBag)
+        {
+            _spells[i] = child.gameObject;
+            Debug.Log(i);
+            i++;
+        }
+    }
 
-  /* 
-   * ignore this for now something I am doing for something else
-   * Transform[] children = new Transform[transform.childCount];
- for (int i=0; i<transform.childCount; i++) {
-     children[i]=transform.GetChild(i);
- } */
-
-
-// Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 }

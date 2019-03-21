@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController3D : MonoBehaviour
 {
-    public float moveSpeed;
-    //public RigidBody theRB;
-    public float jumpForce;
-    public CharacterController controller;
+    
+    [SerializeField] private float moveSpeed;
+    //[SerializeField] private RigidBody theRB;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private float gravityScale;
+    [SerializeField] private Transform pivot;
+    [SerializeField] private float rotateSpeed;
+    [SerializeField] private GameObject playerModel;
 
-    private Vector3 moveDirection;
-    public float gravityScale;
-
-    public Transform pivot;
-    public float rotateSpeed;
-
-    public GameObject playerModel;
-
-    // Start is called before the first frame update
+       private Vector3 moveDirection;
+ // Start is called before the first frame update
     void Start()
     {
         //theRB = GetComponent<Rigidbody>();
@@ -25,8 +24,13 @@ public class PlayerController3D : MonoBehaviour
     }
 
     // Update is called once per frame
+    //#TODO: Change this to a function and call from player
     void Update()
     {
+        if (Input.GetButtonDown("Fire1"))
+        {
+          
+        }
         //theRB.velocity = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, theRB.velocity.y, Input.GetAxis("Vertical") * moveSpeed;
 
         /* if(Input.GetButtonDown("Jump"))
@@ -47,7 +51,7 @@ public class PlayerController3D : MonoBehaviour
             
             if (Input.GetButtonDown("Jump"))
             {
-                moveDirection.y = jumpForce;
+                Debug.Log(moveDirection);
             }
         }
 

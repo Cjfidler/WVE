@@ -5,15 +5,14 @@ using UnityEngine;
 public class Camera3D : MonoBehaviour
 {
 
-    public Transform target;
-    public Vector3 offset;
-    public bool useOffsetValues;
-    public float rotateSpeed;
-    public Transform pivot;
-    public float maxViewAngle;
-    public float minViewAngle;
-
-    public bool invertY;
+    [SerializeField] private Transform target;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] private bool useOffsetValues;
+    [SerializeField] private float rotateSpeed;
+    [SerializeField] private Transform pivot;
+    [SerializeField] private float maxViewAngle;
+    [SerializeField] private float minViewAngle;
+    [SerializeField] private bool invertY;
 
     // Start is called before the first frame update
     void Start()
@@ -77,5 +76,7 @@ public class Camera3D : MonoBehaviour
 
         //transform.position = target.position - offset;
         transform.LookAt(target);
+        target.rotation = Quaternion.Euler(0f, pivot.rotation.eulerAngles.y, 0f);
+
     }
 }
