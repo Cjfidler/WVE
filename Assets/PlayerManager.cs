@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(PlayerMovement))]
+
 [RequireComponent(typeof(Rigidbody))]
 
 public class PlayerManager : MonoBehaviour
