@@ -5,7 +5,7 @@ using UnityEngine;
 public class HPEXAMPLE : MonoBehaviour, ITakeDamage
 {
     [SerializeField]private int maxHP;
-    private int currentHP;
+    [SerializeField] private int currentHP;
 
     private void Start()
     {
@@ -20,11 +20,15 @@ public class HPEXAMPLE : MonoBehaviour, ITakeDamage
         }
 
         currentHP = currentHP - DamageTaken;
+        if (currentHP <= 0)
+        {
+            WhenDead();
+        }
     }
 
    public void WhenDead()
     {
-        Debug.Log("It Died");
+        Destroy(gameObject);
     }
 
 
